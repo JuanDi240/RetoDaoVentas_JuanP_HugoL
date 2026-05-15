@@ -16,7 +16,7 @@ public class ProductoDAO implements GenericDAO<Producto>{
 
 	@Override
 	public boolean insertar(Producto objeto) {
-		String sql = "INSERT INTO prodcto(nombre, precio, stock) VALUES(?,?,?)";
+		String sql = "INSERT INTO producto(nombre, precio, stock) VALUES(?,?,?)";
 		try (Connection con = ConexionBD.getConnection();
 		PreparedStatement ps = con.prepareStatement(sql)) {
 		ps.setString(1, objeto.getNombre());
@@ -24,7 +24,7 @@ public class ProductoDAO implements GenericDAO<Producto>{
 		ps.setInt(3, objeto.getStock());
 		return ps.executeUpdate() > 0;
 		} catch (SQLException e) {
-		System.out.println("Error insertando río: " + e.getMessage());
+		System.out.println("Error insertando producto: " + e.getMessage());
 		return false;
 		}
 	}

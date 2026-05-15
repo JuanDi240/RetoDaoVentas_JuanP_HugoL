@@ -76,6 +76,25 @@ public class FacturaDAO implements GenericDAO<Factura>{
 
 	}
 
+	public Factura obtenerPorfecha(LocalDate fecha) {
+		String sql = "SELECT * FROM factura WHERE fecha=?";
+
+        try (Connection con = ConexionBD.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setObject(1, fecha);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return mapear(rs);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error buscando factura por id: " + e.getMessage());
+        }
+        return null;
+
+	}
+	
 	@Override
 	public boolean actualizar(Factura objeto) {
 		String sql = "UPDATE factura SET fecha=?, id_cliente=?, id_empleado=?, subtotal=?, iva=?, total=? WHERE id=?";
