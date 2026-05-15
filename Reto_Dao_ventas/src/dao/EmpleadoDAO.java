@@ -14,7 +14,7 @@ public class EmpleadoDAO implements GenericDAO<Empleado> {
 
 	@Override
 	public boolean insertar(Empleado empleado) {
-		String sql = "INSERT INTO cliente (puesto, salario) VALUES (?, ?);";
+		String sql = "INSERT INTO empleado (puesto, salario) VALUES (?, ?);";
 		
 		
 
@@ -46,7 +46,7 @@ public class EmpleadoDAO implements GenericDAO<Empleado> {
 	@Override
 	public List<Empleado> obtenerTodos() {
 		List<Empleado> empleados = new ArrayList<>();
-	    String sql = "select id, direccion from cliente;";
+	    String sql = "select id, direccion from empleado;";
 
 			try (Connection conn = ConexionBD.getConnection();
 					PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -93,7 +93,7 @@ public class EmpleadoDAO implements GenericDAO<Empleado> {
 
 	@Override
 	public boolean actualizar(Empleado empleado) {
-		String sql = "UPDATE cliente SET puesto=?, salario= ? WHERE id=?";
+		String sql = "UPDATE empleado SET puesto=?, salario= ? WHERE id=?";
 
 		try (Connection conn = ConexionBD.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
