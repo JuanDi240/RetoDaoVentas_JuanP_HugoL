@@ -8,7 +8,7 @@ public class Persona implements Serializable {
 	
 	protected String dni;
 	protected String nombre;
-	public Persona(int id, String dni, String nombre) {
+	public Persona(String dni, String nombre) {
 		super();
 		
 		this.dni = dni;
