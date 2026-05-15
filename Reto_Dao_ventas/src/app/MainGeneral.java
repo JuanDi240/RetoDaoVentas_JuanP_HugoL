@@ -138,7 +138,7 @@ public class MainGeneral {
 		if (existe!=true) {
 			pD.insertar(p1);
 			System.out.println("Producto " + p1.getNombre() + " añadido!");
-		}
+		}else {System.out.println("Producto " + p1.getNombre() + " no a sido añadido debido a que ya existe!");}
 		
 		
 		
