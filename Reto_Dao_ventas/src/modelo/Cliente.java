@@ -1,25 +1,16 @@
 package modelo;
 
+import serie.Persona;
+
 public class Cliente extends Persona {
-	private int id;
+	private static final long serialVersionUID = 1L;
 	private String direccion;
-	public Cliente() {
-		super();
+	public Cliente(String dni, String nombre) {
+		super(dni, nombre);
 	}
-	public Cliente(String direccion) {
-		super();
+	public Cliente(String dni, String nombre, String direccion) {
+		super(dni, nombre);
 		this.direccion = direccion;
-	}
-	public Cliente(int id, String direccion) {
-		super();
-		this.id = id;
-		this.direccion = direccion;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getDireccion() {
 		return direccion;
@@ -27,10 +18,16 @@ public class Cliente extends Persona {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", direccion=" + direccion + "]";
+		return "Cliente [direccion=" + direccion + ", dni=" + dni + ", nombre=" + nombre + "]";
 	}
+	
+	
+	
 	
 
 }
