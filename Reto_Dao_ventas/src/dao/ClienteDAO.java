@@ -46,7 +46,7 @@ public class ClienteDAO implements GenericDAO<Cliente> {
 
 	@Override
 	public List<Cliente> obtenerTodos() {
-		List<Cliente> alumnos = new ArrayList<>();
+		List<Cliente> clientes = new ArrayList<>();
 	    String sql = "select id, direccion from cliente;";
 
 			try (Connection conn = ConexionBD.getConnection();
@@ -54,14 +54,14 @@ public class ClienteDAO implements GenericDAO<Cliente> {
 					ResultSet rs = pstmt.executeQuery()) {
 
 				while (rs.next()) {
-					alumnos.add(mapearFila(rs));
+					clientes.add(mapearFila(rs));
 					
 				}
 
 			} catch (SQLException e) {
 				System.err.println("Error SQL al obtener todos los clientes: " + e.getMessage());
 			}
-			return alumnos;
+			return clientes;
 	}
 	private Cliente mapearFila(ResultSet rs) throws SQLException {
 		Cliente c = new Cliente();
