@@ -110,6 +110,7 @@ public class LineaFacturaDAO implements GenericDAO<LineaFactura> {
 	
 	private LineaFactura mapear(ResultSet rs) throws SQLException {
 		LineaFactura lf = new LineaFactura();
+		lf.setId(rs.getInt("id"));
 		lf.setId_factura(rs.getInt("id_factura"));
 		lf.setId_producto(rs.getInt("id_producto"));
 		lf.setCantidad(rs.getInt("cantidad"));
