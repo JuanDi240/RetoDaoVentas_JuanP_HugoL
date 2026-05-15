@@ -41,8 +41,4 @@ public class Persona {
 		return "Persona [id=" + id + ", dni=" + dni + ", nombre=" + nombre + "]";
 	}
 	
-	
-	
-	
-
 }
