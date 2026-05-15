@@ -46,7 +46,7 @@ public class EmpleadoDAO implements GenericDAO<Empleado> {
 	@Override
 	public List<Empleado> obtenerTodos() {
 		List<Empleado> empleados = new ArrayList<>();
-	    String sql = "select id, direccion from empleado;";
+	    String sql = "select id, puesto, salario from empleado;";
 
 			try (Connection conn = ConexionBD.getConnection();
 					PreparedStatement pstmt = conn.prepareStatement(sql);
